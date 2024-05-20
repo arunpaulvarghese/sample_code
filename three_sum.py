@@ -2,7 +2,7 @@
 def threeSum(nums):
     nums.sort()
     answer = []
-    for i in range(len(nums) - 2):
+    for i in range(len(nums)-2):
         l = i + 1
         r = len(nums) - 1
         if nums[i] == nums[i-1]:
@@ -15,12 +15,12 @@ def threeSum(nums):
                 l +=1
             else:
                 triplet = [nums[i], nums[l], nums[r]]
-                triplet.append(answer)
+                answer.append(triplet)
                 while l<r and nums[l] == triplet[1]:
                     l +=1
                 while l<r and nums[r] == triplet[2]:
                     r-=1
         return answer
-
-
+n = [-5,-2,0,2,3,5]
+print(threeSum(n))
 
