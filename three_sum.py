@@ -1,4 +1,3 @@
-# Three sum from an array
 def threeSum(nums):
     nums.sort()
     answer = []
@@ -23,4 +22,3 @@ def threeSum(nums):
         return answer
 n = [-5,-2,0,2,3,5]
 print(threeSum(n))
-
