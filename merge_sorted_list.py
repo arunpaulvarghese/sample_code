@@ -4,7 +4,7 @@ class ListNode():
         self.val = val
         self.next = next
 
-
+# The list_to_linkedlist function converts a list to a linked list.
 def list_to_linkedlist(elements):
     head = ListNode(elements[0])
     current = head
@@ -31,6 +31,7 @@ class SortList():
             current.next = list2
         return head
 
+# The linkedlist_to_list function converts a linked list back to a Python list.
 def linkedlist_to_list(merge):
     list = []
     while merge:
