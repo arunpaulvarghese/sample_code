@@ -1,19 +1,26 @@
 class Solution(object):
-    def generate(self, numRows):
+    def getRow(self, rowIndex):
         result = []
-        if numRows == 0:
-            return result
+        if rowIndex == 0:
+            return [1]
+        if rowIndex == 1:
+            return [1,1]
 
-        initial = [1]
-        result.append(initial)
+        rowIndex = rowIndex + 1
+        start_row = [1]
+        result.append(start_row)
+        for i in range(1,rowIndex):
+            prev_row = result[i-1]
+            curr_row = [1]
 
-        for i in range(1, numRows):
-            first_res = result[i-1]
-            second = [1]
+            for j in range(1, i):
+                curr_row.append(prev_row[j-1] + prev_row[j])
 
-            for j in range(1,i):
-                second.append(first_res[j-1] + first_res[j])
+            curr_row.append(1)
+            result.append(curr_row)
 
-            second.append(1)
-            result.append(second)
-        return result
+        return result[-1]
+
+
+result = Solution()
+print(result.getRow(4))
